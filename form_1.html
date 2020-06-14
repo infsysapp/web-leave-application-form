@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utc-8">
+<title>Leave Form</title>
+<style>
+fieldset {
+	margin-bottom: 10px;
+}
+input[type="radio"] {
+	margin-bottom: 10px;
+}
+textarea {
+	resize: none;
+}
+</style>
+</head>
+<body>
+<h1>Leave Form</h1>
+<form onsubmit="return false;">
+	<fieldset>
+		<legend>Name</legend>
+		<label for="fname">First Name:&nbsp;</label><input id="fname" type="text">
+		&nbsp;
+		<label for="fname">Last Name:&nbsp;</label><input id="lname" type="text">
+	</fieldset>
+	
+	<fieldset>
+		<legend>Department</legend>
+		<label for="dpt-name">Department Name:&nbsp;</label><textarea id="dpt-name" cols="50" rows="3"></textarea>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Reason</legend>
+		<table><thead><th></th><th></th></thead>
+			<tbody>
+				<input id="vacation-leave" type="radio" name="reason"><label for="vacation-leave">Vacation</label>
+				&nbsp;&nbsp;<input id="sick-leave" type="radio" name="reason"><label for="Sick-leave">Sick</label>
+				&nbsp;&nbsp;<input id="maternity-leave" type="radio" name="reason"><label for="maternity-leave">Maternity</label>
+				&nbsp;&nbsp;<input id="unpaid-leave" type="radio" name="reason"><label for="unpaid-leave">Unpaid</label>
+				<br>
+				<input id="other-leave" type="radio" name="reason"><label for="other-leave">Other:</label>&nbsp;<input type="text">
+			</tbody>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Days</legend>
+		<label for="days-1">Number of days:</label>&nbsp;<input id="days-1" type="number" min="0">&nbsp;&nbsp;<label for="from-1">From:</label>&nbsp;<input id="from-1" type="date">&nbsp;&nbsp;<label for="to-1">To:</label>&nbsp;<input id="to-1" type="date">
+		<br>
+		<label for="days-2">Number of days:</label>&nbsp;<input id="days-2" type="number" min="0">&nbsp;&nbsp;<label for="from-2">From:</label>&nbsp;<input id="from-2" type="date">&nbsp;&nbsp;<label for="to-2">To:</label>&nbsp;<input id="to-2" type="date">
+		<br>
+		<label for="days-3">Number of days:</label>&nbsp;<input id="days-3" type="number" min="0">&nbsp;&nbsp;<label for="from-3">From:</label>&nbsp;<input id="from-3" type="date">&nbsp;&nbsp;<label for="to-3">To:</label>&nbsp;<input id="to-3" type="date">
+	</fieldset>
+	
+	<fieldset>
+		<legend>Signatures for Approval</legend>
+		<label for="employee-sign">Employee:&nbsp;</label><textarea id="employee-sign" cols="50" rows="3"></textarea>
+		<br><br>
+		<label for="supervisor-sign">Supervisor:&nbsp;</label><textarea id="supervisor-sign" cols="50" rows="3"></textarea>
+	</fieldset>
+</form>
+<br>
+<br>
+<button onclick="print_document(this)">Print</button>
+</body>
+<script>
+function print_document(button) {
+	button.style.display = "none";
+	window.print();
+	button.style.display= "block";
+}
+</script>
+</html>
